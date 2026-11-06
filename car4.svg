@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="120" viewBox="0 0 280 120" role="img" aria-label="رسم توضيحي لسيارة">
+<rect width="280" height="120" rx="12" fill="#eef7f7"/>
+<path d="M34 76 L47 55 Q52 47 66 45 L91 40 L111 20 Q117 14 128 14 L183 14 Q194 14 201 24 L218 47 L237 52 Q246 55 249 65 L252 83 L244 91 L36 91 L29 84 Z" fill="#d64545" stroke="#263238" stroke-width="4" stroke-linejoin="round"/>
+<path d="M101 42 L117 23 Q121 20 129 20 L151 20 L151 44 Z M160 20 L181 20 Q187 20 192 27 L204 44 L160 44 Z" fill="#d9f3ff" stroke="#263238" stroke-width="3"/>
+<path d="M37 65 L55 61 M224 62 L244 66" stroke="#f8fbff" stroke-width="6" stroke-linecap="round"/>
+<circle cx="78" cy="89" r="18" fill="#263238"/><circle cx="78" cy="89" r="8" fill="#d9dee2"/>
+<circle cx="211" cy="89" r="18" fill="#263238"/><circle cx="211" cy="89" r="8" fill="#d9dee2"/>
+<path d="M106 92 H183" stroke="#ffffff" stroke-width="3" opacity="0.75"/>
+</svg>

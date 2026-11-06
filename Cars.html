@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>السيارات - موقع تأجير السيارات</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">الصفحة الرئيسية</a> |
+        <a href="AboutUs.html">من نحن</a> |
+        <a href="Cars.html">السيارات</a>
+    </div>
+    <hr />
+    <h1>السيارات المتوفرة للتأجير</h1>
+    <p>اختر السيارة التي تريدها، ويمكنك مشاهدة تفاصيلها بالضغط على زر التفاصيل.</p>
+
+    <table border="1" class="students-table cars-table">
+        <thead>
+            <tr><th>الرمز</th><th>السيارة</th><th>سنة الصنع</th><th>السعر اليومي</th><th>التفاصيل</th><th>اختيار</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>CR-001</td><td><img class="car-image" src="car1.svg" alt="Toyota Corolla" /> Toyota Corolla</td><td>2023</td><td>2500000 ل.س</td><td><button type="button" class="details-button">التفاصيل</button></td><td><input type="checkbox" class="car-choice" value="1" /></td></tr>
+            <tr class="details-row"><td colspan="6">الوقود: بنزين، ناقل الحركة: أوتوماتيك، المقاعد: 5، اللون: أبيض، العداد: 25000 كم.</td></tr>
+            <tr><td>CR-002</td><td><img class="car-image" src="car2.svg" alt="Kia Sportage" /> Kia Sportage</td><td>2022</td><td>4000000 ل.س</td><td><button type="button" class="details-button">التفاصيل</button></td><td><input type="checkbox" class="car-choice" value="2" /></td></tr>
+            <tr class="details-row"><td colspan="6">الوقود: بنزين، ناقل الحركة: أوتوماتيك، المقاعد: 5، اللون: رمادي، العداد: 38000 كم.</td></tr>
+            <tr><td>CR-003</td><td><img class="car-image" src="car3.svg" alt="Hyundai Elantra" /> Hyundai Elantra</td><td>2024</td><td>3000000 ل.س</td><td><button type="button" class="details-button">التفاصيل</button></td><td><input type="checkbox" class="car-choice" value="3" /></td></tr>
+            <tr class="details-row"><td colspan="6">الوقود: بنزين، ناقل الحركة: أوتوماتيك، المقاعد: 5، اللون: أزرق، العداد: 12000 كم.</td></tr>
+            <tr><td>CR-004</td><td><img class="car-image" src="car4.svg" alt="Chevrolet Spark" /> Chevrolet Spark</td><td>2021</td><td>1800000 ل.س</td><td><button type="button" class="details-button">التفاصيل</button></td><td><input type="checkbox" class="car-choice" value="4" /></td></tr>
+            <tr class="details-row"><td colspan="6">الوقود: بنزين، ناقل الحركة: يدوي، المقاعد: 4، اللون: أحمر، العداد: 51000 كم.</td></tr>
+            <tr><td>CR-005</td><td><img class="car-image" src="car5.svg" alt="Nissan Sunny" /> Nissan Sunny</td><td>2023</td><td>2200000 ل.س</td><td><button type="button" class="details-button">التفاصيل</button></td><td><input type="checkbox" class="car-choice" value="5" /></td></tr>
+            <tr class="details-row"><td colspan="6">الوقود: بنزين، ناقل الحركة: أوتوماتيك، المقاعد: 5، اللون: فضي، العداد: 29000 كم.</td></tr>
+        </tbody>
+    </table>
+
+    <p><button type="button" id="continueButton">متابعة</button></p>
+
+    <form id="bookingForm" action="#" method="post" class="booking-form" novalidate="novalidate">
+        <fieldset>
+            <legend>نموذج الحجز</legend>
+            <p><label for="fullName">الاسم الكامل:</label><br /><input type="text" class="input-field" id="fullName" name="fullName" /></p>
+            <p><label for="nationalId">الرقم الوطني (11 خانة):</label><br /><input type="text" class="input-field" id="nationalId" name="nationalId" /></p>
+            <p><label for="startDate">تاريخ بداية التأجير (yyyy-mm-dd):</label><br /><input type="text" class="input-field" id="startDate" name="startDate" /></p>
+            <p><label for="endDate">تاريخ نهاية التأجير (yyyy-mm-dd):</label><br /><input type="text" class="input-field" id="endDate" name="endDate" /></p>
+            <p><label for="mobile">رقم الموبايل:</label><br /><input type="text" class="input-field" id="mobile" name="mobile" /></p>
+            <p><label for="email">البريد الإلكتروني:</label><br /><input type="text" class="input-field" id="email" name="email" /></p>
+            <p><button type="submit">إرسال</button></p>
+        </fieldset>
+    </form>
+    <div id="bookingMessage" class="booking-message" role="alert" aria-live="polite" style="display:none;"></div>
+
+    <div id="bookingResult" class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="resultTitle" style="display:none;">
+        <div class="booking-modal-content">
+            <button type="button" id="closeResult" class="modal-close" aria-label="إغلاق">×</button>
+            <h2 id="resultTitle">تفاصيل الحجز</h2>
+            <div id="resultDetails"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function () {
+        $(".details-button").click(function () {
+            var row = $(this).closest("tr").next(".details-row");
+            row.toggle();
+            if (row.is(":visible")) {
+                $(this).text("إخفاء التفاصيل");
+            } else {
+                $(this).text("التفاصيل");
+            }
+        });
+
+        $("#continueButton").click(function () {
+            if ($(".car-choice:checked").length === 0) {
+                showBookingMessage("يرجى اختيار سيارة واحدة على الأقل.");
+            } else {
+                $("#bookingMessage").hide().text("");
+                $("#bookingForm").slideDown();
+            }
+        });
+
+        $("#bookingForm").submit(function (event) {
+            event.preventDefault();
+            var name = $.trim($("#fullName").val());
+            var national = $.trim($("#nationalId").val());
+            var start = $.trim($("#startDate").val());
+            var end = $.trim($("#endDate").val());
+            var mobile = $.trim($("#mobile").val());
+            var email = $.trim($("#email").val());
+
+            if ($(".car-choice:checked").length === 0) {
+                showBookingMessage("يرجى اختيار سيارة واحدة على الأقل.");
+                return;
+            }
+            if (name !== "" && !/^[\u0621-\u064A ]+$/.test(name)) {
+                showBookingMessage("الاسم يجب أن يحتوي على أحرف عربية فقط.");
+                return;
+            }
+            if (!/^(0[1-9]|1[0-4])[0-9]{9}$/.test(national)) {
+                showBookingMessage("الرقم الوطني مطلوب، ويجب أن يتكون من 11 رقماً وتبدأ أول خانتين من 01 إلى 14.");
+                return;
+            }
+            if (!/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/.test(start) || !validDate(start)) {
+                showBookingMessage("تاريخ بداية التأجير مطلوب بصيغة yyyy-m-d أو yyyy-mm-dd، مع شهر من 1 إلى 12 ويوم من 1 إلى 30.");
+                return;
+            }
+            if (!/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/.test(end) || !validDate(end)) {
+                showBookingMessage("تاريخ نهاية التأجير مطلوب بصيغة yyyy-m-d أو yyyy-mm-dd، مع شهر من 1 إلى 12 ويوم من 1 إلى 30.");
+                return;
+            }
+            if (dateValue(end) <= dateValue(start)) {
+                showBookingMessage("يجب أن يكون تاريخ نهاية التأجير لاحقاً لتاريخ البداية.");
+                return;
+            }
+            if (mobile !== "" && !/^09[0-9]{8}$/.test(mobile)) {
+                showBookingMessage("رقم الموبايل يجب أن يتكون من 10 أرقام ويبدأ بـ 09، أو اتركه فارغاً.");
+                return;
+            }
+            if (email !== "" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showBookingMessage("البريد الإلكتروني غير صحيح، أو اتركه فارغاً.");
+                return;
+            }
+
+            $("#bookingMessage").hide().text("");
+            var days = dateValue(end) - dateValue(start);
+            var prices = [0, 2500000, 4000000, 3000000, 1800000, 2200000];
+            var names = ["", "Toyota Corolla", "Kia Sportage", "Hyundai Elantra", "Chevrolet Spark", "Nissan Sunny"];
+            var codes = ["", "CR-001", "CR-002", "CR-003", "CR-004", "CR-005"];
+            var total = 0;
+            var details = $("#resultDetails").empty();
+            $(".car-choice:checked").each(function () {
+                var number = parseInt($(this).val(), 10);
+                var carTotal = prices[number] * days;
+                total = total + carTotal;
+                $("<p>").text(codes[number] + " - " + names[number] + " - السعر اليومي: " + prices[number].toLocaleString("en-US") + " ل.س - " + days + " يوم - الإجمالي: " + carTotal.toLocaleString("en-US") + " ل.س").appendTo(details);
+            });
+            var discount = 0;
+            if (days > 10) {
+                discount = total * 0.5;
+            }
+            $("<p>").text("المجموع قبل الخصم: " + total.toLocaleString("en-US") + " ل.س").appendTo(details);
+            $("<p>").text("الخصم: " + discount.toLocaleString("en-US") + " ل.س").appendTo(details);
+            $("<p>").addClass("booking-total").text("المبلغ الإجمالي: " + (total - discount).toLocaleString("en-US") + " ل.س").appendTo(details);
+            $("#bookingResult").fadeIn(200);
+        });
+
+        $("#closeResult, #bookingResult").click(function (event) {
+            if (event.target === this || event.target.id === "closeResult") {
+                $("#bookingResult").fadeOut(200);
+            }
+        });
+    });
+
+    function showBookingMessage(message) {
+        $("#bookingMessage").text(message).stop(true, true).fadeIn(150);
+    }
+
+    function dateValue(value) {
+        var parts = value.split("-");
+        return parseInt(parts[0], 10) * 360 + (parseInt(parts[1], 10) - 1) * 30 + parseInt(parts[2], 10);
+    }
+
+    function validDate(value) {
+        var parts = value.split("-");
+        var year = parseInt(parts[0], 10);
+        var month = parseInt(parts[1], 10);
+        var day = parseInt(parts[2], 10);
+        return year >= 1 && month >= 1 && month <= 12 && day >= 1 && day <= 30;
+    }
+    //]]>
+    </script>
+</body>
+</html>
